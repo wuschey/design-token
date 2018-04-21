@@ -1,0 +1,37 @@
+{
+  "name": "design-token",
+  "version": "1.0.0",
+  "description": "Design Token Generator",
+  "main": "index.js",
+  "bin": {
+    "design-token": "config.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.0",
+    "js-yaml": "^3.11.0",
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bin/index.js"
+  
+  },
+  "atomic-react-cli": {
+    "design-token": "data/example.yml",
+    "componentsDir": "src/components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuschey/design-token.git"
+  },
+  "keywords": [
+    "design",
+    "tokens"
+  ],
+  "author": "Aminata Sidibe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wuschey/design-token/issues"
+  },
+  "homepage": "https://github.com/wuschey/design-token#readme"
+}

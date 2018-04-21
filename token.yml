@@ -1,0 +1,16 @@
+color : 
+  white: &color-white "#FFF"
+  black: &color-black "#000"
+  neutral: 
+    20: &color-neutral-20 "#22222"
+    90: &color-neutral-90 "#EEEEE"
+  blue: 
+    50: &color-blue-50 "#2196F3"
+    60: &color-blue-60  "#1E88E5"
+size:
+  big: 12px
+  medium: 10px;
+background-color :
+  default: *color-blue-50
+text-color:
+  default: *color-white
