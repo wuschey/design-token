@@ -1,9 +1,9 @@
 color : 
-  white: &color-white "#FFF"
-  black: &color-black "#000"
+  white: &color-white "#FFFFFF"
+  black: &color-black "#000000"
   neutral: 
-    20: &color-neutral-20 "#22222"
-    90: &color-neutral-90 "#EEEEE"
+    20: &color-neutral-20 "#222222"
+    90: &color-neutral-90 "#EEEEEE"
   blue: 
     50: &color-blue-50 "#2196F3"
     60: &color-blue-60  "#1E88E5"
