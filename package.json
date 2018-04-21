@@ -4,7 +4,7 @@
   "description": "Design Token Generator",
   "main": "index.js",
   "bin": {
-    "design-token": "config.js"
+    "design-token": "bin/index.js"
   },
   "dependencies": {
     "chalk": "^2.4.0",
