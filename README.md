@@ -1,2 +1,2 @@
 # design-token
-Design Token System
+Design Token Generator

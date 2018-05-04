@@ -14,7 +14,6 @@
   "devDependencies": {},
   "scripts": {
     "start": "node bin/index.js"
-  
   },
   "atomic-react-cli": {
     "design-token": "data/example.yml",

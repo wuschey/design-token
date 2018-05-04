@@ -11,12 +11,12 @@ const DataConfig = {
 const Formats = {
   "es6": {
     "headInformation": '/* SourceCode Doc/ Info */',
-    "template": (k, v) => `export const ${k} = ${v};`,
+    "template": (k, v) => `export const ${k} = '${v}';`,
     "fileExtension": '.es6.js',
   },
    "js": {
     "headInformation": '/* SourceCode Doc/ Info */',
-    "template": (k, v) => `exports.${k} = ${v};`,
+    "template": (k, v) => `exports.${k} = '${v}';`,
     "fileExtension": '.js',
   },
 
