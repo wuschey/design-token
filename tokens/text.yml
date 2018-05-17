@@ -1,0 +1,8 @@
+global:
+  type: color
+  category: text
+props:
+  text-brand:
+    value: "#1589ee"
+
+  

@@ -1,0 +1,7 @@
+global:
+  type: color
+  category: backgrounds
+props:
+  color-background:
+    value: "#000000"
+

@@ -8,11 +8,13 @@ let templateStr;
 
 const designToken = () => {
     try {
-        let obj = yaml.safeLoad(fs.readFileSync(DataConfig.inputPath, "utf8"));
+        // let obj = yaml.safeLoad(fs.readFileSync(DataConfig.inputPath, "utf8"));
+        let obj = yaml.safeLoad(fs.readFileSync("./tokens/backgrounds.yml", "utf8"));
 
-        _.keys(Formats).map((key) => {
-            createDataObj(Formats[key], obj);
-        })
+        console.log(obj);
+        // _.keys(Formats).map((key) => {
+        //     createDataObj(Formats[key], obj);
+        // })
 
     } catch (e) {
         console.log(e);

@@ -1,0 +1,12 @@
+global:
+  type: fonts
+  category: fonts
+props:
+  family-heading:
+    value: Salesforce Sans', Arial, sans-serif
+  family-text:
+    value: Salesforce Sans', Arial, sans-serif
+  weight-bold:
+    value: 700
+
+

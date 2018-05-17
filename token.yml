@@ -1,19 +1,83 @@
-color : 
-  white: &color-white "#FFFFFF"
-  black: &color-black "#000000"
-  neutral: 
-    20: &color-neutral-20 "#222222"
-    90: &color-neutral-90 "#EEEEEE"
-  blue: 
-    50: &color-blue-50 "#2196F3"
-    60: &color-blue-60  "#1E88E5"
-size:
-  big: &size-12 12px
-  medium: 10px;
-background-color :
-  default: *color-blue-50
-text-color:
-  default: *color-white
-teaser:
-  text-color: *color-blue-50
-  font-size: *size-12
+imports:
+  - ./backgrounds.yml
+  
+
+# #tokens
+
+# props:
+#   color-brand:
+#     value: "FFFFFF"
+#     type: "color"
+#     category: "background"
+#     meta:
+#       info: "Our Brand Color"
+#       palette-name: "BRAND_COLOR"
+#   color-background:
+#     value: "#f3f2f2"
+#     category: "background"
+#     meta:
+#       info: "Primary Background Color"
+#       palette-name: "PALETTE_GRAY_3"
+  
+
+# color : 
+#   white: &color-white "#FFFFFF"
+#   background:
+#     primary:
+#       token-name: "button-color-background-primary"
+   
+#   text:
+
+#   border:
+
+# font:
+
+# font-size:
+
+# opacity:
+
+# line-height:
+
+# spacing:
+
+# radius:
+
+# sizing:
+
+# shadow:
+
+# time:
+
+# media-query:
+
+# z-index:
+
+# #background
+
+
+# #decisions
+
+# color:
+#   background: &color-b
+
+
+
+# color : 
+#   white: &color-white "#FFFFFF"
+#   black: &color-black "#000000"
+#   neutral: 
+#     20: &color-neutral-20 "#222222"
+#     90: &color-neutral-90 "#EEEEEE"
+#   blue: 
+#     50: &color-blue-50 "#2196F3"
+#     60: &color-blue-60  "#1E88E5"
+# size:
+#   big: &size-12 12px
+#   medium: 10px;
+# background-color :
+#   default: *color-blue-50
+# text-color:
+#   default: *color-white
+# teaser:
+#   text-color: *color-blue-50
+#   font-size: *size-12
