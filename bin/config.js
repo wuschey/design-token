@@ -32,8 +32,14 @@ const Formats = {
   }
 }
 
+const tokenFiles = {
+  "backgrounds" : "backgrounds.yml",
+  "fonts" : "fonts.yml",
+  "text" : "text.yml"
+}
 
 module.exports = {
   DataConfig,
-  Formats
+  Formats,
+  tokenFiles
 }
