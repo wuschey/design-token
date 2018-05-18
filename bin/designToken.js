@@ -3,7 +3,7 @@ const fs = require("fs");
 const chalk = require("chalk");
 const _ = require("lodash");
 const {DataConfig, Formats, tokenFiles} = require('./config')
-
+const colorTemplate = require('./config/templates');
 class DesignToken {
 
     constructor() {
@@ -30,8 +30,9 @@ class DesignToken {
                 }
             }
         }
-        this.getTokenKeys();
-        // this.createTokenOutput();
+        this.createTokenOutput();
+        // this.getTokenKeys();
+        
 
     }
 
@@ -48,6 +49,7 @@ class DesignToken {
                 const fileObj = Formats[key];
 
                 this.createFileInputs(tokenObj, Formats[key]);
+                // this.createTokenOutput(tokenObj);
             }
         }
     }
@@ -79,6 +81,15 @@ class DesignToken {
                 throw err;
             console.log(chalk.green.bold("created File : " + outputFile));
         });
+    }
+
+    createTokenOutput(){
+        // console.log(tokenObj);
+        // console.log(colorTemplate('hallo'));
+        for (let index = 0; index < this._arrToken.length; index++) {
+            const element = this._arrToken[index];
+            console.log(element.global.category);
+        }
     }
 
 }

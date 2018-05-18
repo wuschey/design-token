@@ -32,6 +32,7 @@ const Formats = {
   }
 }
 
+
 const tokenFiles = {
   "backgrounds" : "backgrounds.yml",
   "fonts" : "fonts.yml",
