@@ -3,7 +3,7 @@ const fs = require("fs");
 const chalk = require("chalk");
 const _ = require("lodash");
 const {DataConfig, Formats, tokenFiles} = require('./config')
-const colorTemplate = require('./config/templates');
+const {colorTemplate, colorTileTemplate} = require('./config/templates');
 class DesignToken {
 
     constructor() {
@@ -32,7 +32,6 @@ class DesignToken {
         }
         this.createTokenOutput();
         // this.getTokenKeys();
-        
 
     }
 
@@ -83,14 +82,35 @@ class DesignToken {
         });
     }
 
-    createTokenOutput(){
-        // console.log(tokenObj);
-        // console.log(colorTemplate('hallo'));
+    createTokenOutput() {
+
+        let output;
+
         for (let index = 0; index < this._arrToken.length; index++) {
             const element = this._arrToken[index];
-            console.log(element.global.category);
+            let obj = {};
+            obj.category = element.global.category;
+            obj.list = this.createListOutput(element.props);
+            output = colorTemplate(obj);
+           
+            console.log(output);
         }
+         this.writeFile('./output/template.html', output);
+    }
+
+    createListOutput(obj) {
+
+        let list = '';
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                const el = obj[key];
+                list = list.concat(colorTileTemplate(key, el.value));
+
+            }
+            return list;
+        }
+
     }
 
 }
-module.exports =  DesignToken;
+module.exports = DesignToken;
