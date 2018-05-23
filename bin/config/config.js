@@ -1,3 +1,5 @@
+//TODO sort Config File
+
 const outputDir = './output'
 const inputPath = './token.yml';
 const outputName = 'variables';
