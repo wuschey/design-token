@@ -1,6 +1,7 @@
 global:
   type: color
   category: text
+  categoryName: Text Colors
 props:
   text-brand:
     value: "#1589ee"

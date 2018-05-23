@@ -2,12 +2,14 @@ const outputDir = './output'
 const inputPath = './token.yml';
 const outputName = 'variables';
 const templateName = './output/template.html';
+const tokenDir = './tokens/';
 
 const DataConfig = {
   outputDir,
   inputPath,
   outputName,
-  templateName
+  templateName,
+  tokenDir
 }
 
 const Formats = {
@@ -35,7 +37,7 @@ const Formats = {
 }
 
 
-const tokenFiles = {
+const _arrTokenFiles = {
   "backgrounds" : "backgrounds.yml",
   "fonts" : "fonts.yml",
   "text" : "text.yml"
@@ -44,5 +46,5 @@ const tokenFiles = {
 module.exports = {
   DataConfig,
   Formats,
-  tokenFiles,
+  _arrTokenFiles,
 }
