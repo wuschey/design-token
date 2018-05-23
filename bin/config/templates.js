@@ -1,4 +1,4 @@
-const colorTemplate = obj => {
+const categoryTemplate = obj => {
   return `
     <h2>${obj.category}</h2>
     <table>
@@ -11,7 +11,7 @@ const colorTemplate = obj => {
   `;
 };
 
-const colorTileTemplate = (token, color) => {
+const colorTemplate = (token, color) => {
   return (`
   <tr>
   <td>${token}</td>
@@ -22,7 +22,20 @@ const colorTileTemplate = (token, color) => {
     `)
 }
 
+const fontTemplate = (token, fontName) => {
+  return (`
+    <tr>
+      <td>${token}</td>
+      <td>
+        <span style="font-family:${fontName}; font-size:20px;">${fontName}</span>
+      </td>
+    </tr>
+    `
+  )
+}
+
 module.exports = {
+  categoryTemplate,
   colorTemplate,
-  colorTileTemplate
+  fontTemplate,
 }

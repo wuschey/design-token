@@ -3,11 +3,12 @@ const fs = require("fs");
 const chalk = require("chalk");
 const _ = require("lodash");
 const {DataConfig, Formats, tokenFiles} = require('./config')
-const {colorTemplate, colorTileTemplate} = require('./config/templates');
+const {categoryTemplate, fontTemplate, colorTemplate} = require('./config/templates');
 class DesignToken {
 
     constructor() {
         this._arrToken = [];
+        this.output = '';
         // this._arrFileSetting = ['es6', "js", "scss", "less"];
     }
     create() {
@@ -84,27 +85,54 @@ class DesignToken {
 
     createTokenOutput() {
 
-        let output;
-
         for (let index = 0; index < this._arrToken.length; index++) {
+            /* get all Array Elments from Token Files */
             const element = this._arrToken[index];
+
+            // Create structured data object;
+
             let obj = {};
             obj.category = element.global.category;
-            obj.list = this.createListOutput(element.props);
-            output = colorTemplate(obj);
-           
-            console.log(output);
+            obj.type = element.global.type;
+
+            /* Choose between different template types: */
+
+            let templateType = obj.type;
+            let template;
+
+            switch (templateType) {
+                case 'color':
+                    console.log('Template Type == Color');
+                    template = colorTemplate;
+                    // obj.list = this.createListOutput(element.props, colorTileTemplate);
+                    break;
+
+                case 'fonts':
+                    console.log('Template Type == fonts');
+                    template = fontTemplate;
+
+                    break;
+            }
+            // create table output from Template
+            obj.list = this.createListOutput(element.props, template);
+
+            //concat the output
+            this.output = this.output.concat(categoryTemplate(obj));
+
         }
-         this.writeFile('./output/template.html', output);
+        // Write the output
+        this.writeFile(DataConfig.templateName, this.output);
+
     }
 
-    createListOutput(obj) {
+    createListOutput(obj, tileTemplate) {
+        // console.log(tileTemplate);
 
         let list = '';
         for (const key in obj) {
             if (obj.hasOwnProperty(key)) {
                 const el = obj[key];
-                list = list.concat(colorTileTemplate(key, el.value));
+                list = list.concat(tileTemplate(key, el.value));
 
             }
             return list;
