@@ -8,7 +8,7 @@ const {
     } = require('./config/templates');
 
 
-//TODO: Export writeFile Function
+//TODO: Export writeFile Function in DataCreate Class
  
 class TokenLibrary{
 

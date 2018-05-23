@@ -22,7 +22,6 @@ class TokenFiles {
                 const fileObj = Formats[key];
 
                 this.createFileInputs(tokenObj, Formats[key]);
-                // this.createTokenOutput(tokenObj);
             }
         }
     }
