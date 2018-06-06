@@ -20,6 +20,7 @@ class DesignToken {
                 let tokenFile = _arrTokenFiles[key];
                 try {
                     tokenObj = yaml.safeLoad(fs.readFileSync(DataConfig.tokenDir + tokenFile, "utf8"));
+                    // console.log(tokenObj);
                     this
                         ._arrToken
                         .push(tokenObj);

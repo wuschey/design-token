@@ -3,7 +3,7 @@
 const outputDir = './output'
 const inputPath = './token.yml';
 const outputName = 'variables';
-const templateName = './output/template.html';
+const templateName = outputDir + '/TokenLibrary.html';
 const tokenDir = './tokens/';
 
 const DataConfig = {

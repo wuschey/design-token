@@ -3,9 +3,9 @@ global:
   category: fonts
 props:
   family-heading:
-    value: Salesforce Sans, Arial, sans-serif
+    value: Open Sans, sans-serif
   family-text:
-    value: Salesforce Sans, Arial, sans-serif
+    value: Open Sans, sans-serif
   weight-bold:
     value: 700
 

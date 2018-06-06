@@ -25,8 +25,9 @@ class TokenFiles {
             }
         }
     }
-
+    
     createFileInputs(props, format) {
+        console.log(format.fileExtension);
         let templateStr = '';
 
         for (let key in props) {
@@ -34,7 +35,11 @@ class TokenFiles {
             if (props.hasOwnProperty(key)) {
                 const element = props[key];
                 const val = element.value;
-                key = key.replace('-', '_')
+                if (format.fileExtension =='.es6.js' || format.fileExtension==".js")
+                {
+                    key = key.replace(/-/g, '_');
+                }
+
                 templateStr = templateStr.concat(format.template(key, val));
                 templateStr = templateStr.concat('\n');
             }

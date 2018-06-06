@@ -1,7 +1,41 @@
 global:
   type: color
   category: backgrounds
+colors:
+  color_white: &color_white 
+    value: "#FFFFFF" 
+    name: "Color White"
+  innoq_blue_1: &innoq_blue_1
+    value:  "#24244C" 
+    name: "INNOQ_Blue_1"
+  innoq_blue_2: &innoq_blue_2
+    value: "#5B5B79"
+    name: "INNOQ_Blue_2"
+  innoq_blue_3: &innoq_blue_3
+    value:  "#9191A5"
+    name: "INNOQ_Blue_3"
+  innoq_blue_4: &innoq_blue_4
+    value:  "#C8C8D2"
+    name: "INNOQ Blue 4"  
+  innoq_red_1: &innoq_red_1
+    value:  "#FF4D67"
+    name:   INNOQ red 1
+  innoq_red_2: &innoq_red_2
+    value:  "#FC6E86"
+    name:   INNOQ_red_2
+  innoq_red_3: &innoq_red_3
+    value:  "#FD9EAE"
+    name:   INNOQ red 3
+  innoq_red_4: &innoq_red_4
+    value:  "#FECED6"
+    name:   INNOQ red 4
+
 props:
-  color-background:
-    value: "#000000"
+  color-background: *color_white
+  color-background-default: 
+    <<: *innoq_blue_3
+    description: "Beschreibung des Token"
+  color-background-dark: *innoq_blue_2
+  color-background-fallback: *innoq_red_2
+  color-background-alert: *innoq_red_3
 
