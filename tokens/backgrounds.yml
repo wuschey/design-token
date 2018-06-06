@@ -35,7 +35,9 @@ props:
   color-background-default: 
     <<: *innoq_blue_3
     description: "Beschreibung des Token"
-  color-background-dark: *innoq_blue_2
+  color-background-dark: 
+    <<: *innoq_blue_2
+    description: "Beschreibung des Token 2"
   color-background-fallback: *innoq_red_2
   color-background-alert: *innoq_red_3
 
