@@ -42,7 +42,8 @@ const Formats = {
 const _arrTokenFiles = {
   "backgrounds" : "backgrounds.yml",
   "fonts" : "fonts.yml",
-  "text" : "text.yml"
+  "text" : "text.yml",
+  "border" : "border.yml"
 }
 
 module.exports = {

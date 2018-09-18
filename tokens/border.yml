@@ -1,7 +1,7 @@
 global:
   type: color
-  category: text
-  categoryName: Text Colors
+  category: border
+  categoryName: Border Colors
 colors:
   innoq_blue_1: &innoq_blue_1
     value:  "#24244C" 
@@ -10,9 +10,9 @@ colors:
     value: "#FFFFFF"
     name : "WHITE_WHITE"
 props:
-  text-color-button-small-inverted:
+  border-color-button-small-inverted:
     <<: *color_white
-    description: "Text Color for inverted buttons"
+    description: "Border Color for inverted buttons"
  
   
 

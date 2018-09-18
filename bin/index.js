@@ -29,7 +29,8 @@ class DesignToken {
                 }
             }
         }
-        const tokenLibrary = new TokenLibrary(this._arrToken);
+        const tokenLibrary = new TokenLibrary();
+        tokenLibrary.setTokenData(this._arrToken);
         tokenLibrary.create();
 
         const tokenFiles = new TokenFiles(this._arrToken);

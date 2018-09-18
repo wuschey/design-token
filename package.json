@@ -11,9 +11,12 @@
     "js-yaml": "^3.11.0",
     "lodash": "^4.17.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^23.1.0"
+  },
   "scripts": {
-    "start": "node bin/index.js"
+    "start": "node bin/index.js",
+    "test" : "jest"
   },
   "atomic-react-cli": {
     "design-token": "data/example.yml",

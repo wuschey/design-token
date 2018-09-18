@@ -1,92 +1,99 @@
 const { DataConfig } = require("./config/config");
 const {
+  htmlSkeleton,
   categoryTemplate,
   fontTemplate,
   colorTemplate
 } = require("./config/templates");
-const {writeFile} = require("./utils/writefile");
-const {hexToRgb} = require("./utils/hextorgb");
-
+const { writeFile } = require("./utils/writefile");
+const { hexToRgb } = require("./utils/hextorgb");
 
 class TokenLibrary {
-  constructor(arrToken) {
+  constructor() {
+    this.globalInfos = {};
     this.output = "";
-    this._arrToken = arrToken;
-    // console.log(this._arrToken);
+    this.templateType;
+  }
+
+  setTokenData(tokenData) {
+    this._arrToken = tokenData;
   }
 
   create() {
-    for (let index = 0; index < this._arrToken.length; index++) {
-      /* get all Array Elments from Token Files */
-      const element = this._arrToken[index];
+    const _numTokens = this._arrToken.length;
+
+    for (let i = 0; i < _numTokens; i++) {
+      const tokenObj = this._arrToken[i];
+
+      this.templateType = tokenObj.global.type;
+      this.template = this.getTemplate(this.templateType);
 
       // Create structured data object;
+      let infoObj = {};
+      infoObj.category = tokenObj.global.category;
+      infoObj.type = tokenObj.global.type;
 
-      let obj = {};
-      obj.category = element.global.category;
-      obj.type = element.global.type;
-
-      /* Choose between different template types: */
-
-      let templateType = obj.type;
-      let template;
-
-      switch (templateType) {
-        case "color":
-          console.log("Template Type == Color");
-          template = colorTemplate;
-          // obj.list = this.createListOutput(element.props, colorTileTemplate);
-          break;
-
-        case "fonts":
-          console.log("Template Type == fonts");
-          template = fontTemplate;
-
-          break;
-      }
       // create table output from Template
-      obj.list = this.createListOutput(element.props, template,templateType);
+      infoObj.list = this.createListOutput(tokenObj.props);
 
       //concat the output
-      this.output = this.output.concat(categoryTemplate(obj));
+      this.output = this.output.concat(htmlSkeleton(categoryTemplate(infoObj)));
     }
     // Write the output
     writeFile(DataConfig.templateName, this.output);
   }
-  
 
+  /* return the template for that token type */
+  getTemplate(type) {
+    let template;
 
-  createListOutput(obj, tileTemplate,templateType) {
-    console.log(obj);
+    switch (type) {
+      case "color":
+        template = colorTemplate;
+        break;
+
+      case "fonts":
+        template = fontTemplate;
+        break;
+    }
+    return template;
+  }
+
+  writeDataObject(prop, obj) {
+    console.log(prop);
+    let dataObj = {};
+
+    dataObj.optionName = obj.name;
+    dataObj.value = obj.value;
+    dataObj.tokenName = prop;
+    return dataObj;
+  }
+  extendDataObjectByColor(dataObj, el) {
+    dataObj.hex = hexToRgb(el.value);
+    dataObj.desc = el.description;
+    return dataObj;
+  }
+
+  createListOutput(obj, tileTemplate) {
     let list = "";
-    let dataObj ={};
 
     for (let prop in obj) {
       if (obj.hasOwnProperty(prop)) {
-        const el = obj[prop];
-        let tokenName = '';
-        if (el.name) tokenName = el.name;
+        const valueObject = obj[prop];
 
-        
-        dataObj.prop = prop;
-        dataObj.value = el.value;
-        dataObj.tokenName = tokenName
+        let dataObj = this.writeDataObject(prop, valueObject);
 
-        if (templateType == 'color')
-        {
-          dataObj.hex = hexToRgb(el.value);
-          dataObj.desc = el.description;
-          // console.log(this.hexToRgb(el.value));
-          list = list.concat(tileTemplate(dataObj));
-        }
-        else
-        list = list.concat(tileTemplate(prop, el.value, tokenName));
-
+        if (this.templateType == "color") {
+          dataObj = this.extendDataObjectByColor(dataObj, valueObject);
+          list = list.concat(this.template(dataObj));
+        } else
+          list = list.concat(
+            this.template(prop, valueObject.value, dataObj.tokenName)
+          );
       }
     }
     return list;
   }
-
 }
 
 module.exports = TokenLibrary;
