@@ -2,67 +2,61 @@ global:
   type: color
   category: backgrounds
 colors:
-  innoq_blue_1: &innoq_blue_1
-    value:  "#24244C" 
-    name: "INNOQ_BLUE_1"
-  innoq_blue_2: &innoq_blue_2
-    value: "#5B5B79"
-    name: "INNOQ_BLUE_2"
-  innoq_blue_3: &innoq_blue_3
-    value:  "#9191A5"
-    name: "INNOQ_BLUE_3"
-  innoq_blue_4: &innoq_blue_4
-    value:  "#C8C8D2"
-    name: "IINNOQ_BLUE_4"  
-  innoq_red_1: &innoq_red_1
-    value:  "#FF4D67"
-    name:   "INNOQ_RED_1"
-  innoq_red_2: &innoq_red_2
-    value:  "#FC6E86"
-    name:   "INNOQ_RED_2"
-  innoq_red_3: &innoq_red_3
-    value:  "#FD9EAE"
-    name:   "INNOQ_RED_3"
-  innoq_red_4: &innoq_red_4
-    value:  "#FECED6"
-    name:   "INNOQ_RED_4"
-  innoq_green_1: &innoq_green_1
-    value: "#55CDAF"
-    name: "INNOQ_GREEN_1"
-  innoq_green_2: &innoq_green_2
-    value: "#68DDC3"
-    name: "INNOQ_GREEN_2"
-  innoq_green_3: &innoq_green_3
-    value: "#CCF3EB"
-    name: "INNOQ_GREEN_3"
-  innoq_green_4: &innoq_green_4
-    value: "#55CDAF"
-    name: "INNOQ_GREEN_4"
-  innoq_yellow_1: &innoq_yellow_1
-    value: "#FFF019"
-    name : "INNOQ_YELLOW_1"
-  innoq_yellow_2: &innoq_yellow_2
-    value: "#FFF019"
-    name : "INNOQ_YELLOW_2"
-  innoq_yellow_3: &innoq_yellow_3
-    value: "#FFF019"
-    name : "INNOQ_YELLOW_3"
-  innoq_yellow_4: &innoq_yellow_4
-    value: "#FFF019"
-    name : "INNOQ_YELLOW_4"
+  lighten_5: &lighten_5
+    value: "#f1f8e9"
+    name: "LIGHT_GREEN_LT_5"
+  lighten_4: &lighten_4
+    value: "#dcedc8"
+    name: "LIGHT_GREEN_LT_4"
+  lighten_3: &lighten_3
+    value: "#c5e1a5"
+    name: "LIGHT_GREEN_LT_3"
+  lighten_2: &lighten_2
+    value: "#f1f8e9"
+    name: "LIGHT_GREEN_LT_2"
+  lighten_1: &lighten_1
+    value: "#9ccc65"
+    name: "LIGHT_GREEN_LT_1"
+  light_green: &lighten_green
+    value: "#8bc34a"
+    name: "LIGHT_GREEN"
+  darken_1: &darken_1
+    value: "#7cb342"
+    name: "LIGHT_GREEN_DARK_1"
+  darken_2: &darken_2
+    value: "#689f38"
+    name: "LIGHT_GREEN_DARK_2"
+  darken_3: &darken_3
+    value: "#558b2f"
+    name: "LIGHT_GREEN_DARK_3"
+  darken_4: &darken_4
+    value: "#33691e"
+    name: "LIGHT_GREEN_DARK_4"
+  accent_1: &accent_1
+    value: "#ccff90"
+    name: "LIGHT_GREEN_ACCENT_1"
+  accent_2: &accent_2
+    value: "#b2ff59"
+    name: "LIGHT_GREEN_ACCENT_2"
+  accent_3: &accent_3
+    value: "#76ff03"
+    name: "LIGHT_GREEN_ACCENT_3"
+  accent_4: &accent_4
+    value: "#64dd17"
+    name: "LIGHT_GREEN_ACCENT_4"
 
 props:
   color-background-default: 
-    <<: *innoq_blue_3
+    <<: *accent_4
     description: "Beschreibung des Token"
   color-background-dark: 
-    <<: *innoq_blue_2
+    <<: *accent_3
     description: "Beschreibung des Token 2"
-  color-background-fallback: *innoq_red_2
+  color-background-fallback: *accent_3
   color-background-alert: 
-    <<: *innoq_red_3
+    <<: *darken_3
   color-background-button-cta: 
-    <<: *innoq_red_1
+    <<: *lighten_3
     description: "CTA Button Background Color"
   color-background-button-small-inverted:
-    <<: *innoq_blue_1
+    <<: *darken_1

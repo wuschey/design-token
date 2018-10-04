@@ -1,4 +1,6 @@
-const htmlSkeleton = template => {
+// const htmlHead = fontLinks =>
+
+const htmlSkeleton = (template, fontLinks) => {
   return `
   <!DOCTYPE html>
 <html>
@@ -6,9 +8,10 @@ const htmlSkeleton = template => {
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Token Library</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bundle.css">
+    ${fontLinks}
+    
 </head>
 <style>
     th {

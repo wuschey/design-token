@@ -1,9 +1,12 @@
 global:
   type: fonts
   category: fonts
+  fontlinks:
+      roboto: https://fonts.googleapis.com/css?family=Roboto
+      os: https://fonts.googleapis.com/css?family=OpenSans
 props:
   family-heading:
-    value: Open Sans, sans-serif
+    value: Roboto, sans-serif;
   family-text:
     value: Open Sans, sans-serif
   weight-bold:

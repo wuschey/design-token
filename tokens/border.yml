@@ -3,15 +3,51 @@ global:
   category: border
   categoryName: Border Colors
 colors:
-  innoq_blue_1: &innoq_blue_1
-    value:  "#24244C" 
-    name: "INNOQ_BLUE_1"
-  color_white: &color_white
-    value: "#FFFFFF"
-    name : "WHITE_WHITE"
+  lighten_5: &lighten_5
+    value: "#f1f8e9"
+    name: "LIGHT_GREEN_LT_5"
+  lighten_4: &lighten_4
+    value: "#dcedc8"
+    name: "LIGHT_GREEN_LT_4"
+  lighten_3: &lighten_3
+    value: "#c5e1a5"
+    name: "LIGHT_GREEN_LT_3"
+  lighten_2: &lighten_2
+    value: "#f1f8e9"
+    name: "LIGHT_GREEN_LT_2"
+  lighten_1: &lighten_1
+    value: "#9ccc65"
+    name: "LIGHT_GREEN_LT_1"
+  light_green: &lighten_green
+    value: "#8bc34a"
+    name: "LIGHT_GREEN"
+  darken_1: &darken_1
+    value: "#7cb342"
+    name: "LIGHT_GREEN_DARK_1"
+  darken_2: &darken_2
+    value: "#689f38"
+    name: "LIGHT_GREEN_DARK_2"
+  darken_3: &darken_3
+    value: "#558b2f"
+    name: "LIGHT_GREEN_DARK_3"
+  darken_4: &darken_4
+    value: "#33691e"
+    name: "LIGHT_GREEN_DARK_4"
+  accent_1: &accent_1
+    value: "#ccff90"
+    name: "LIGHT_GREEN_ACCENT_1"
+  accent_2: &accent_2
+    value: "#b2ff59"
+    name: "LIGHT_GREEN_ACCENT_2"
+  accent_3: &accent_3
+    value: "#76ff03"
+    name: "LIGHT_GREEN_ACCENT_3"
+  accent_4: &accent_4
+    value: "#64dd17"
+    name: "LIGHT_GREEN_ACCENT_4"
 props:
   border-color-button-small-inverted:
-    <<: *color_white
+    <<: *accent_4
     description: "Border Color for inverted buttons"
  
   

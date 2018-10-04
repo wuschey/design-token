@@ -1,14 +1,12 @@
 //TODO sort Config File
 
 const outputDir = './output'
-const inputPath = './token.yml';
 const outputName = 'variables';
 const templateName = outputDir + '/TokenLibrary.html';
 const tokenDir = './tokens/';
 
 const DataConfig = {
   outputDir,
-  inputPath,
   outputName,
   templateName,
   tokenDir
@@ -40,10 +38,10 @@ const Formats = {
 
 
 const _arrTokenFiles = {
-  "backgrounds" : "backgrounds.yml",
   "fonts" : "fonts.yml",
+  "backgrounds" : "backgrounds.yml",
   "text" : "text.yml",
-  "border" : "border.yml"
+  "border" : "border.yml",
 }
 
 module.exports = {

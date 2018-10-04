@@ -13,6 +13,7 @@ class TokenLibrary {
     this.globalInfos = {};
     this.output = "";
     this.templateType;
+    this.fontSetted = false;
   }
 
   setTokenData(tokenData) {
@@ -26,6 +27,15 @@ class TokenLibrary {
       const tokenObj = this._arrToken[i];
 
       this.templateType = tokenObj.global.type;
+      let libraryLinks;
+
+      // fonts for librarypreview
+      if (this.templateType == "fonts") {
+        libraryLinks = this.getFontLinksForLibrary(tokenObj.global.fontlinks);
+        this.fontSetted = true;
+      }
+
+      // console.log(tokenObj.global.fontlinks);
       this.template = this.getTemplate(this.templateType);
 
       // Create structured data object;
@@ -37,12 +47,29 @@ class TokenLibrary {
       infoObj.list = this.createListOutput(tokenObj.props);
 
       //concat the output
-      this.output = this.output.concat(htmlSkeleton(categoryTemplate(infoObj)));
+
+      this.output = this.output.concat(
+        htmlSkeleton(categoryTemplate(infoObj), libraryLinks)
+      );
     }
     // Write the output
     writeFile(DataConfig.templateName, this.output);
   }
-
+  metaLinkTPL(fontLink) {
+    return `
+    <link href="${fontLink}" rel="stylesheet"></link>
+    `;
+  }
+  getFontLinksForLibrary(fontlinks) {
+    let links = "";
+    for (const key in fontlinks) {
+      if (fontlinks.hasOwnProperty(key)) {
+        const element = fontlinks[key];
+        links = links.concat(this.metaLinkTPL(element));
+      }
+    }
+    return links;
+  }
   /* return the template for that token type */
   getTemplate(type) {
     let template;
